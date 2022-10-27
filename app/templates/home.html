@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block content %}
+  <section>
+    {% if email %}
+      <h1>Hello, {{ email }}</h1>
+    {% else %}
+      <h1>Hello, <a href="{{url_for('login')}}">Log in</a>?</h1>
+    {% endif %}
+    <form action="{{url_for('logout')}}" method="post">
+      <input type="hidden" name="email" value="{{email}}">
+      <button type="submit" role="button">Logout</a>
+    </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %} 
+
+{% block content %}
+  <section>
+    <h1>You are logged in!</h1>
+    <p>Since you're seeing this page, you logged in successfully.</p>
+    <form action="{{url_for('logout')}}" method="post">
+      <input type="hidden" name="email" value="{{email}}">
+      <button type="submit" role="button">Logout</a>
+    </form>
+  </section>
+{% endblock %}

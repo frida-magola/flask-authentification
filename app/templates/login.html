@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+
+{% block content %}
+  <section>
+    <h1>Login</h1>
+    <form method="post">
+      <input type="email" name="email" id="email", value="{{email}}">
+      <input type="password" name="password" id="password">
+      <button type="submit">Login</button>
+    </form>
+    {% if error %}
+      <p>{{error}}</p>
+    {% endif %}
+    <a href="{{url_for('signup')}}">Sign up</a>
+  </section>
+{% endblock %}
